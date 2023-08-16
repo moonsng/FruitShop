@@ -25,24 +25,22 @@ function App() {
       </Container>
     </Navbar>
     <div className='main-bg'></div>
-<List fruits = {fruits} />
-     <Container>
-        <Row>
-          {fruits.map((fruit, index) => (
-            <Col key={index} md={4}>
-              <img src={fruit.image} alt={fruit.title} width="80%" />
-              <h4>{fruit.title}</h4>
-              <p>{fruit.price}</p>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+<div className = "row">
+    <Card fruits = {fruits[0]} i = {1}></Card>
+  <Card fruits = {fruits[1]} i = {2}></Card>
+  <Card fruits = {fruits[2]} i = {3}></Card>
     </div>
   );
 }
 
-function List({ fruits }) {
-  return null;
+function Card(props){
+  return (
+    <div className="col-md-4">
+      <img src={'https://codingapple1.github.io/shop/shoes' + props.i + '.jpg'} width="80%" />
+      <h4>{ props.shoes.title }</h4>
+      <p>{ props.shoes.price }</p>
+    </div>
+  )
 }
   
 export default App;
