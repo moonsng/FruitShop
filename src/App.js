@@ -36,30 +36,24 @@ function App() {
       </Container>
     </Navbar>
     <div className='main-bg'></div>
-
-    <div className='container'>
-      <div className='row'>
-        <div className='col-md-4'>
-        <img src="https://cdn.imweb.me/upload/S202104263584dd527ccd5/ca1e00d7b4648.jpg" width={"80%"}/>
-        <h4>{fruits[0].title}</h4>
-        <p>{fruits[0].price}</p>
-        </div>
-       
-        <div className='col-md-4'>
-        <img src="https://kormedi.com/wp-content/uploads/2023/06/gettyimages-1400556472.jpg" width={"80%"}/>
-        <h4>수박</h4>
-        <p>씨가 별로 없고 과육이 단단합니다.</p>
-        </div>
-        <div className='col-md-4'>
-        <img src="https://www.ekr.or.kr/Kkrpub/webzine/2022/06/img/002season/season-1.jpg" width={"80%"}/>
-        <h4>참외</h4>
-        <p>참 외롭다.</p>
-        </div>
-      </div>
-    </div>
-    
+<List fruits = {fruits} />
+     <Container>
+        <Row>
+          {fruits.map((fruit, index) => (
+            <Col key={index} md={4}>
+              <img src={fruit.image} alt={fruit.title} width="80%" />
+              <h4>{fruit.title}</h4>
+              <p>{fruit.price}</p>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }
 
+function List({ fruits }) {
+  return null;
+}
+  
 export default App;
